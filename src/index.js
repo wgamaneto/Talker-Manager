@@ -135,11 +135,9 @@ app.delete('/talker/:id', tokenVer, (request, response) => {
     return response.status(HTTP_STATUS.DELETE).json();
   });
 });
-
 app.listen(PORT, () => {
 console.log(`Listening to port ${PORT}`);
 });
-
 app.post('/login', emailVer, senhaVer, (request, response) => {
   const token = crypto.randomBytes(8).toString('hex');
   return response.status(HTTP_STATUS.OK).json({ token });
